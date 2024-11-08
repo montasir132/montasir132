@@ -32,10 +32,5 @@
 
 <p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=montasir132&show_icons=true&locale=en&layout=compact" alt="montasir132" /></p>
 
-<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=montasir132&show_icons=true&locale=en" alt="montasir132" /></p>
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=montasir132)](https://github.com/anuraghazra/github-readme-stats)
-
-![Vaunt Badge](https://api.vaunt.dev/v1/github/entities/montasir132/contributions?format=svg&private=true)  
-
 <p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=montasir132&" alt="montasir132" /></p>
 
