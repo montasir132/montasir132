@@ -24,7 +24,7 @@
 <a href="https://linkedin.com/in/dev-montasiralam/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="dev-montasiralam" height="30" width="40"/></a>
 <a href="https://facebook.com/dev.montasiralam/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/facebook.svg" alt="dev.montasiralam" height="30" width="40" /></a>
 <a href="https://instagram.com/dev.montasiralam/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="dev.montasiralam/" height="30" width="40" /></a>
-<a href="https://youtube.com/c/@montasiralam132" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/youtube.svg" alt="@montasiralam132" height="30" width="40" /></a>
+<a href="https://youtube.com/@montasiralam132" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/youtube.svg" alt="@montasiralam132" height="30" width="40" /></a>
 </p>
 
 <h3 align="left">Languages and Tools:</h3>
