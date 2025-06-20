@@ -8,7 +8,7 @@
 
 <p align="left"> <a href="https://twitter.com/montasiralam132" target="blank"><img src="https://img.shields.io/twitter/follow/montasiralam132?logo=twitter&style=for-the-badge" alt="montasiralam132" /></a> </p>
 
-- 🌱 I’m currently learning **WordPress**
+- 🌱 I’m currently learning **node.js**, **Express.js**
 
 - 📝 I regularly write articles on [https://montasiralam.xyz/](https://montasiralam.xyz/)
 
