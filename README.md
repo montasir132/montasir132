@@ -29,9 +29,9 @@ Stay updated with the latest tutorials and projects by subscribing to my YouTube
 
 <!-- Snake Game Repo View -->
 
-<div align="center">
+<!-- <div align="center">
   <img src="https://profile-readme-generator.com/assets/snake.svg" alt="Snake animation" />
-</div>
+</div> -->
 
 ## 🏆 GitHub Trophies
 ![](https://github-profile-trophy.vercel.app/?username=montasir132&theme=radical&no-frame=false&no-bg=false&margin-w=4)
