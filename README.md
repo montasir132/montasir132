@@ -20,7 +20,7 @@ Email Me 👉 ✉️ **montasiralam132@gmail.com** For Collaboration/Project or 
 
 Stay updated with the latest tutorials and projects by subscribing to my YouTube channel, connect on LinkedIn and following on Instagram, Facebook, Twitter and Email.
 
-[![YouTube](https://img.shields.io/badge/YouTube-%23FF0000.svg?logo=YouTube&logoColor=white)](https://youtube.com/@@montasiralam132)
+[![YouTube](https://img.shields.io/badge/YouTube-%23FF0000.svg?logo=YouTube&logoColor=white)](https://youtube.com/@montasiralam132)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/dev-montasiralam) 
 [![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&logoColor=white)](https://instagram.com/md.montasiralam340) 
 [![Facebook](https://img.shields.io/badge/Facebook-%231877F2.svg?logo=Facebook&logoColor=white)](https://facebook.com/md.montasiralam340) 
