@@ -28,10 +28,7 @@ Stay updated with the latest tutorials and projects by subscribing to my YouTube
 [![email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:montasiralam132@gmail.com) 
 
 <!-- Snake Game Repo View -->
-
-<!-- <div align="center">
-  <img src="https://profile-readme-generator.com/assets/snake.svg" alt="Snake animation" />
-</div> -->
+![snake gif](https://github.com/montasir132/montasir132/blob/output/github-snake-dark.svg)
 
 ## 🏆 GitHub Trophies
 ![](https://github-profile-trophy.vercel.app/?username=montasir132&theme=radical&no-frame=false&no-bg=false&margin-w=4)
