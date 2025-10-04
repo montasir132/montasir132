@@ -54,6 +54,15 @@ Stay updated with the latest tutorials and projects by subscribing to my YouTube
 ![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white) 
 ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
+
+## 🧠 Competitive Programming
+
+I enjoy solving algorithmic problems and sharpening my logical thinking.  
+Languages I use: **C, C++**
+
+- 🔗 **Codeforces:** [roselune_5](https://codeforces.com/profile/montasiralam132)  
+- 🔗 **Codechef:** [roselune_77](https://www.codechef.com/users/montasir132)
+
 # 📊 GitHub Stats:
 ![](https://github-readme-stats.vercel.app/api/top-langs/?username=montasir132&theme=synthwave&hide_border=false&include_all_commits=true&count_private=true&layout=compact)
 ![](https://github-readme-stats.vercel.app/api?username=montasir132&theme=synthwave&hide_border=false&include_all_commits=true&count_private=true)
