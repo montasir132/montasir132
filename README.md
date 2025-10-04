@@ -16,6 +16,11 @@ Email Me 👉 ✉️ **montasiralam132@gmail.com** For Collaboration/Project or 
 - 😄 * *Pronouns:** Montasir
 - ⚡ **Fun fact:** I Love Tech and Tech Love Me
 
+## 📈 Profile Views
+<p align="left">
+  <img src="https://komarev.com/ghpvc/?username=montasir132&label=Profile%20views&color=0e75b6&style=flat" alt="Montasir Alam" />
+</p>
+
 ## 🔗 I am a Content Creator. 😊😊
 
 Stay updated with the latest tutorials and projects by subscribing to my YouTube channel, connect on LinkedIn and following on Instagram, Facebook, Twitter and Email.
