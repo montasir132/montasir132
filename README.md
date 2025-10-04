@@ -70,7 +70,7 @@ Languages I use: **C, C++**
 
 
 
-### ✍️ Random Dev Quote
+### ✍️ Quote
 ![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical)
 
 
