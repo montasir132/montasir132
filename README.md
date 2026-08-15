@@ -103,6 +103,8 @@ Software Engineering     ███████████░░░░░░░�
 
 </div>
 
+---
+
 ## 🐍 My Contribution Snake
 
 <div align="center">
