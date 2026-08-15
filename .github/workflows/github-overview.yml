@@ -21,7 +21,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 1
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -35,10 +36,22 @@ jobs:
           GITHUB_EMAIL: montasiralam132@gmail.com
         run: node scripts/generate-overview.mjs
 
-      - name: Publish Overview and Preserve Snake
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: output
-          publish_dir: ./generated
-          keep_files: true
+      - name: Update Output Branch
+        run: |
+          git fetch origin output:output
+
+          git checkout output
+
+          cp generated/overview.svg overview.svg
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add overview.svg
+
+          if git diff --cached --quiet; then
+            echo "No changes to overview.svg"
+          else
+            git commit -m "Update GitHub overview"
+            git push origin output
+          fi
