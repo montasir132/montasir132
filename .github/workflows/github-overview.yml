@@ -3,7 +3,9 @@ name: Update GitHub Overview
 on:
   schedule:
     - cron: "20 0 * * *"
+
   workflow_dispatch:
+
   push:
     branches:
       - main
@@ -18,11 +20,13 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
 
       - name: Generate GitHub Overview
         env:
@@ -31,10 +35,10 @@ jobs:
           GITHUB_EMAIL: montasiralam132@gmail.com
         run: node scripts/generate-overview.mjs
 
-      - name: Publish overview.svg to output branch
+      - name: Publish Overview and preserve Snake
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: output
           publish_dir: ./generated
-          force_orphan: true
+          keep_files: true
