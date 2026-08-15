@@ -41,7 +41,6 @@ jobs:
       - name: Update Output Branch
         run: |
           git fetch origin output:output
-
           git switch output
 
           cp /tmp/overview.svg ./overview.svg
