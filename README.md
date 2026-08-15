@@ -143,8 +143,6 @@ Software Engineering     ███████████░░░░░░░�
 ---
 
 
----
-
 ### 📚 Aitvet_CST
 
 A project related to my Computer Science & Technology studies.
