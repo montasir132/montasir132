@@ -31,12 +31,10 @@ jobs:
           GITHUB_EMAIL: montasiralam132@gmail.com
         run: node scripts/generate-overview.mjs
 
-      # IMPORTANT: no force_orphan.
-      # keep_files preserves existing Snake files on output branch.
-      - name: Publish Overview and preserve Snake
+      - name: Publish overview.svg to output branch
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: output
           publish_dir: ./generated
-          keep_files: true
+          force_orphan: true
