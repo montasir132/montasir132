@@ -117,17 +117,21 @@ Software Engineering     ███████████░░░░░░░�
 
 </div>
 
-## 📊 GitHub Analytics
+<h2>📊 GitHub Analytics</h2>
 
 <div align="center">
 
-<a href="https://github.com/montasir132">
-  <img height="180" src="https://github-readme-stats.vercel.app/api?username=montasir132&show_icons=true&include_all_commits=true&count_private=true&rank_icon=github&theme=tokyonight&hide_border=true" alt="Montasir's GitHub Stats" />
-</a>
+<img
+  src="https://github-readme-stats.vercel.app/api?username=montasir132&show_icons=true&include_all_commits=true&count_private=false&theme=tokyonight&hide_border=true&cache_seconds=86400"
+  alt="Montasir's GitHub Stats"
+  height="180"
+/>
 
-<a href="https://github.com/montasir132">
-  <img height="180" src="https://github-readme-stats.vercel.app/api/top-langs/?username=montasir132&layout=compact&langs_count=8&theme=tokyonight&hide_border=true" alt="Montasir's Top Languages" />
-</a>
+<img
+  src="https://github-readme-stats.vercel.app/api/top-langs/?username=montasir132&layout=compact&langs_count=8&theme=tokyonight&hide_border=true&cache_seconds=86400"
+  alt="Montasir's Top Languages"
+  height="180"
+/>
 
 </div>
 
@@ -157,15 +161,14 @@ Software Engineering     ███████████░░░░░░░�
 
 ---
 
-## 🏆 GitHub Achievements
+<h2>🏆 GitHub Achievements</h2>
 
 <div align="center">
 
-<a href="https://github.com/montasir132">
-
-<img src="https://github-profile-trophy.vercel.app/?username=montasir132&theme=tokyonight&no-frame=true&no-bg=true&margin-w=8&row=1&column=7" alt="Montasir's GitHub Trophies" />
-
-</a>
+<img
+  src="https://github-profile-trophy.vercel.app/?username=montasir132&theme=tokyonight&no-frame=true&no-bg=true&margin-w=8&column=7"
+  alt="Montasir's GitHub Trophies"
+/>
 
 </div>
 
