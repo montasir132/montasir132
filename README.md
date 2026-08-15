@@ -103,9 +103,6 @@ Software Engineering     ███████████░░░░░░░�
 
 </div>
 
-<!-- Snake Game Repo View -->
-![snake gif](https://github.com/montasir132/montasir132/blob/output/github-snake-dark.svg)
-
 ## 📊 GitHub Analytics
 
 <div align="center">
