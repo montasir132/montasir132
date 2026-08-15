@@ -90,19 +90,32 @@ Software Engineering     ███████████░░░░░░░�
 </p>
 
 ---
+
+## 🐍 My Contribution Snake
+
+<div align="center">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/montasir132/montasir132/output/github-snake-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/montasir132/montasir132/output/github-snake.svg">
+  <img alt="GitHub Contribution Snake" src="https://raw.githubusercontent.com/montasir132/montasir132/output/github-snake.svg">
+</picture>
+
+</div>
+
 <!-- Snake Game Repo View -->
 ![snake gif](https://github.com/montasir132/montasir132/blob/output/github-snake-dark.svg)
 
-# 📊 GitHub Analytics
+## 📊 GitHub Analytics
 
 <div align="center">
 
 <a href="https://github.com/montasir132">
-  <img height="180" src="https://github-readme-stats.vercel.app/api?username=montasir132&show_icons=true&include_all_commits=true&count_private=true&rank_icon=github&theme=tokyonight&hide_border=true" alt="Montasir's GitHub Stats">
+  <img height="180" src="https://github-readme-stats.vercel.app/api?username=montasir132&show_icons=true&include_all_commits=true&count_private=true&rank_icon=github&theme=tokyonight&hide_border=true" alt="Montasir's GitHub Stats" />
 </a>
 
 <a href="https://github.com/montasir132">
-  <img height="180" src="https://github-readme-stats.vercel.app/api/top-langs/?username=montasir132&layout=compact&langs_count=8&theme=tokyonight&hide_border=true" alt="Montasir's Top Languages">
+  <img height="180" src="https://github-readme-stats.vercel.app/api/top-langs/?username=montasir132&layout=compact&langs_count=8&theme=tokyonight&hide_border=true" alt="Montasir's Top Languages" />
 </a>
 
 </div>
@@ -138,26 +151,15 @@ Software Engineering     ███████████░░░░░░░�
 <div align="center">
 
 <a href="https://github.com/montasir132">
-  <img src="https://github-profile-trophy.vercel.app/?username=montasir132&theme=tokyonight&no-frame=true&no-bg=true&margin-w=8&column=7" alt="Montasir's GitHub Trophies">
+
+<img src="https://github-profile-trophy.vercel.app/?username=montasir132&theme=tokyonight&no-frame=true&no-bg=true&margin-w=8&row=1&column=7" alt="Montasir's GitHub Trophies" />
+
 </a>
 
 </div>
+
 
 ---
-
-# 🚀 Featured Projects
-
-<div align="center">
-
-<a href="https://github.com/montasir132/Aitvet_CST">
-  <img src="https://github-readme-stats.vercel.app/api/pin/?username=montasir132&repo=Aitvet_CST&theme=tokyonight&hide_border=true" alt="Aitvet CST">
-</a>
-
-<a href="https://github.com/montasir132/ck-book">
-  <img src="https://github-readme-stats.vercel.app/api/pin/?username=montasir132&repo=ck-book&theme=tokyonight&hide_border=true" alt="CK Book">
-</a>
-
-</div>
 
 ### 📚 Aitvet_CST
 
