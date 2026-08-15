@@ -103,6 +103,21 @@ Software Engineering     ███████████░░░░░░░�
 
 </div>
 
+## 📌 GitHub Overview
+
+<div align="center">
+
+<a href="https://github.com/montasir132">
+  <img
+    src="https://raw.githubusercontent.com/montasir132/montasir132/output/overview.svg"
+    alt="Montasir's GitHub Overview"
+    width="900"
+  />
+</a>
+
+</div>
+
+
 ## 📊 GitHub Analytics
 
 <div align="center">
