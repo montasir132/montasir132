@@ -1,9 +1,12 @@
 import fs from "node:fs";
 
 const token = process.env.GITHUB_TOKEN;
-const username = process.env.GITHUB_USERNAME || "montasir132";
+const username =
+  process.env.GITHUB_USERNAME || "montasir132";
+
 const email =
-  process.env.GITHUB_EMAIL || "montasiralam132@gmail.com";
+  process.env.GITHUB_EMAIL ||
+  "montasiralam132@gmail.com";
 
 if (!token) {
   throw new Error("GITHUB_TOKEN is required");
@@ -11,8 +14,9 @@ if (!token) {
 
 const headers = {
   Authorization: `Bearer ${token}`,
-  "Content-Type": "application/json",
-  "User-Agent": "montasir132-github-overview"
+  Accept: "application/vnd.github+json",
+  "X-GitHub-Api-Version": "2022-11-28",
+  "User-Agent": "montasir132-github-overview",
 };
 
 
@@ -23,7 +27,9 @@ const headers = {
 async function githubRest(path) {
   const res = await fetch(
     `https://api.github.com${path}`,
-    { headers }
+    {
+      headers,
+    }
   );
 
   if (!res.ok) {
@@ -39,6 +45,33 @@ async function githubRest(path) {
 
 
 // ============================================================
+// GitHub REST API with headers
+// ============================================================
+
+async function githubRestWithHeaders(path) {
+  const res = await fetch(
+    `https://api.github.com${path}`,
+    {
+      headers,
+    }
+  );
+
+  if (!res.ok) {
+    const body = await res.text();
+
+    throw new Error(
+      `GitHub REST ${res.status}: ${body}`
+    );
+  }
+
+  return {
+    data: await res.json(),
+    headers: res.headers,
+  };
+}
+
+
+// ============================================================
 // GitHub GraphQL API
 // ============================================================
 
@@ -50,11 +83,14 @@ async function githubGraphQL(
     "https://api.github.com/graphql",
     {
       method: "POST",
-      headers,
+      headers: {
+        ...headers,
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify({
         query,
-        variables
-      })
+        variables,
+      }),
     }
   );
 
@@ -62,7 +98,9 @@ async function githubGraphQL(
 
   if (!res.ok || data.errors) {
     throw new Error(
-      JSON.stringify(data.errors || data)
+      JSON.stringify(
+        data.errors || data
+      )
     );
   }
 
@@ -98,7 +136,7 @@ function shortName(
 
 function shortLanguageName(
   name,
-  max = 14
+  max = 12
 ) {
   const text = String(name || "");
 
@@ -111,7 +149,7 @@ function shortLanguageName(
 function formatNumber(number) {
   return new Intl.NumberFormat(
     "en-US"
-  ).format(number);
+  ).format(number || 0);
 }
 
 
@@ -140,12 +178,14 @@ function yearsSince(dateString) {
 
 
 function niceDate(dateString) {
-  return new Date(dateString).toLocaleDateString(
+  return new Date(
+    dateString
+  ).toLocaleDateString(
     "en-US",
     {
       month: "short",
       year: "numeric",
-      timeZone: "UTC"
+      timeZone: "UTC",
     }
   );
 }
@@ -155,9 +195,10 @@ function niceDate(dateString) {
 // GitHub User
 // ============================================================
 
-const user = await githubRest(
-  `/users/${username}`
-);
+const user =
+  await githubRest(
+    `/users/${username}`
+  );
 
 
 // ============================================================
@@ -168,10 +209,10 @@ let repos = [];
 let page = 1;
 
 while (page <= 5) {
-
-  const batch = await githubRest(
-    `/users/${username}/repos?per_page=100&page=${page}&type=owner&sort=updated`
-  );
+  const batch =
+    await githubRest(
+      `/users/${username}/repos?per_page=100&page=${page}&type=owner&sort=updated`
+    );
 
   repos.push(...batch);
 
@@ -183,18 +224,23 @@ while (page <= 5) {
 }
 
 
+// ============================================================
+// Basic GitHub Stats
+// ============================================================
+
 const publicRepos =
-  user.public_repos;
+  user.public_repos || 0;
 
 const followers =
-  user.followers;
+  user.followers || 0;
 
-
-const stars = repos.reduce(
-  (sum, repo) =>
-    sum + (repo.stargazers_count || 0),
-  0
-);
+const stars =
+  repos.reduce(
+    (sum, repo) =>
+      sum +
+      (repo.stargazers_count || 0),
+    0
+  );
 
 
 // ============================================================
@@ -220,11 +266,12 @@ query($login: String!) {
 }
 `;
 
-
 const contributionData =
   await githubGraphQL(
     contributionQuery,
-    { login: username }
+    {
+      login: username,
+    }
   );
 
 
@@ -240,7 +287,8 @@ const weekly =
     (week) =>
       week.contributionDays.reduce(
         (sum, day) =>
-          sum + day.contributionCount,
+          sum +
+          day.contributionCount,
         0
       )
   );
@@ -265,21 +313,23 @@ const languageCounts = {};
 const repoCommitCounts = {};
 
 
+// ============================================================
+// Process Repositories
+// ============================================================
+
 for (
   const repo of repos.slice(0, 40)
 ) {
-
   if (repo.fork) {
     continue;
   }
 
 
-  // ----------------------------------------------------------
+  // ==========================================================
   // Languages by Repository
-  // ----------------------------------------------------------
+  // ==========================================================
 
   try {
-
     const langData =
       await githubRest(
         `/repos/${username}/${encodeURIComponent(
@@ -289,49 +339,92 @@ for (
 
 
     for (
-      const [language, bytes]
-      of Object.entries(langData)
+      const [
+        language,
+        bytes
+      ] of Object.entries(langData)
     ) {
-
       languageCounts[language] =
-        (languageCounts[language] || 0) +
-        bytes;
+        (
+          languageCounts[
+            language
+          ] || 0
+        ) + bytes;
     }
-
   } catch {
-    // Ignore individual repository errors
+    // Ignore repository language errors
   }
 
 
-  // ----------------------------------------------------------
-  // Languages by Commit
-  // ----------------------------------------------------------
+  // ==========================================================
+  // Actual Commit Count
+  // ==========================================================
 
   try {
-
-    const commits =
-      await githubRest(
+    const result =
+      await githubRestWithHeaders(
         `/repos/${username}/${encodeURIComponent(
           repo.name
-        )}/commits?author=${username}&per_page=1`
+        )}/commits?author=${encodeURIComponent(
+          username
+        )}&per_page=1`
       );
 
 
-    repoCommitCounts[
-      repo.language || "Other"
-    ] =
-      (
-        repoCommitCounts[
-          repo.language || "Other"
-        ] || 0
-      ) +
-      Math.min(
-        commits.length,
-        1
+    const link =
+      result.headers.get("link") ||
+      "";
+
+
+    let commitCount = 0;
+
+
+    /*
+      GitHub returns something like:
+
+      <...page=20>; rel="last"
+
+      We use the last page number
+      to estimate the total commit count.
+    */
+
+    const lastPageMatch =
+      link.match(
+        /[?&]page=(\d+)[^>]*>\s*;\s*rel="last"/
       );
 
+
+    if (lastPageMatch) {
+      commitCount =
+        Number(
+          lastPageMatch[1]
+        );
+    } else {
+      commitCount =
+        result.data.length;
+    }
+
+
+    const language =
+      repo.language || "Other";
+
+
+    if (
+      language !== "Other" &&
+      commitCount > 0
+    ) {
+      repoCommitCounts[
+        language
+      ] =
+        (
+          repoCommitCounts[
+            language
+          ] || 0
+        ) +
+        commitCount;
+    }
   } catch {
-    // Ignore individual repository errors
+    // Ignore individual commit errors
   }
 }
 
@@ -341,20 +434,23 @@ for (
 // ============================================================
 
 const topRepoLanguages =
-  Object.entries(languageCounts)
+  Object.entries(
+    languageCounts
+  )
     .sort(
-      (a, b) => b[1] - a[1]
+      (a, b) =>
+        b[1] - a[1]
     )
     .slice(0, 4);
 
 
 const topCommitLanguages =
-  Object.entries(repoCommitCounts)
-    .filter(
-      ([name]) => name !== "Other"
-    )
+  Object.entries(
+    repoCommitCounts
+  )
     .sort(
-      (a, b) => b[1] - a[1]
+      (a, b) =>
+        b[1] - a[1]
     )
     .slice(0, 4);
 
@@ -369,7 +465,7 @@ const palette = [
   "#3fb950",
   "#f2cc60",
   "#f85149",
-  "#79c0ff"
+  "#79c0ff",
 ];
 
 
@@ -384,12 +480,10 @@ function donutSegments(
   cy,
   r
 ) {
-
   if (
     !items.length ||
     total <= 0
   ) {
-
     return `
       <circle
         cx="${cx}"
@@ -397,7 +491,7 @@ function donutSegments(
         r="${r}"
         fill="none"
         stroke="#30363d"
-        stroke-width="18"
+        stroke-width="20"
       />
     `;
   }
@@ -413,9 +507,9 @@ function donutSegments(
   return items
     .map(
       ([name, value], index) => {
-
         const fraction =
           value / total;
+
 
         const length =
           fraction *
@@ -434,10 +528,11 @@ function donutSegments(
                 palette.length
               ]
             }"
-            stroke-width="18"
+            stroke-width="20"
             stroke-linecap="butt"
             stroke-dasharray="${length} ${
-              circumference - length
+              circumference -
+              length
             }"
             stroke-dashoffset="${-offset}"
             transform="rotate(-90 ${cx} ${cy})"
@@ -463,7 +558,6 @@ function donutCard(
   title,
   items
 ) {
-
   const total =
     items.reduce(
       (sum, [, value]) =>
@@ -472,9 +566,11 @@ function donutCard(
     );
 
 
-  // Donut moved to the right
-  const cx = x + 215;
+  const cx =
+    x + 214;
+
   const cy = 525;
+
   const r = 62;
 
 
@@ -483,25 +579,26 @@ function donutCard(
 
   items.forEach(
     ([name, value], index) => {
-
       const y =
-        468 + index * 27;
+        475 +
+        index * 31;
 
 
       const percentage =
         total
           ? Math.round(
-              (value / total) * 100
+              (value / total) *
+                100
             )
           : 0;
 
 
       legend += `
         <rect
-          x="${x + 28}"
-          y="${y - 9}"
-          width="10"
-          height="10"
+          x="${x + 24}"
+          y="${y - 8}"
+          width="9"
+          height="9"
           rx="2"
           fill="${
             palette[
@@ -512,29 +609,35 @@ function donutCard(
         />
 
         <text
-          x="${x + 46}"
+          x="${x + 40}"
           y="${y}"
           class="legend"
-        >${esc(
-          shortLanguageName(name)
-        )}</text>
+        >
+          ${esc(
+            shortLanguageName(
+              name,
+              12
+            )
+          )}
+        </text>
 
         <text
-          x="${x + 125}"
+          x="${x + 126}"
           y="${y}"
           class="legendPercent"
-        >${percentage}%</text>
+        >
+          ${percentage}%
+        </text>
       `;
     }
   );
 
 
   if (!items.length) {
-
     legend = `
       <text
-        x="${x + 28}"
-        y="470"
+        x="${x + 24}"
+        y="475"
         class="legend"
       >
         No language data
@@ -553,7 +656,7 @@ function donutCard(
         y="405"
         width="300"
         height="230"
-        rx="10"
+        rx="12"
         class="card"
       />
 
@@ -590,18 +693,28 @@ function donutCard(
       <circle
         cx="${cx}"
         cy="${cy}"
-        r="42"
+        r="43"
         fill="#161b22"
       />
 
 
       <text
         x="${cx}"
-        y="${cy + 4}"
+        y="${cy - 2}"
         text-anchor="middle"
         class="centerText"
       >
         ${items.length}
+      </text>
+
+
+      <text
+        x="${cx}"
+        y="${cy + 15}"
+        text-anchor="middle"
+        class="centerLabel"
+      >
+        Languages
       </text>
 
     </g>
@@ -613,11 +726,13 @@ function donutCard(
 // Contribution Graph
 // ============================================================
 
-const graphX = 355;
-const graphY = 90;
-const graphW = 570;
-const graphH = 145;
+const graphX = 365;
+const graphY = 105;
+const graphW = 550;
+const graphH = 125;
 
+
+// Graph base line
 
 let graph = `
   <line
@@ -637,7 +752,6 @@ let graph = `
 const points =
   recentWeekly.map(
     (value, index) => {
-
       const x =
         graphX +
         (
@@ -660,7 +774,10 @@ const points =
         graphH;
 
 
-      return [x, y];
+      return [
+        x,
+        y
+      ];
     }
   );
 
@@ -673,22 +790,28 @@ const linePoints =
   points
     .map(
       ([x, y]) =>
-        `${x.toFixed(1)},${y.toFixed(1)}`
+        `${x.toFixed(
+          1
+        )},${y.toFixed(1)}`
     )
     .join(" ");
 
 
 const areaPoints =
-  `${graphX},${graphY + graphH} ` +
+  `${graphX},${
+    graphY + graphH
+  } ` +
   `${linePoints} ` +
-  `${graphX + graphW},${graphY + graphH}`;
+  `${graphX + graphW},${
+    graphY + graphH
+  }`;
 
 
 graph += `
   <polygon
     points="${areaPoints}"
     fill="#a371f7"
-    opacity="0.45"
+    opacity="0.28"
   />
 `;
 
@@ -699,6 +822,8 @@ graph += `
     fill="none"
     stroke="#c084fc"
     stroke-width="3"
+    stroke-linejoin="round"
+    stroke-linecap="round"
   />
 `;
 
@@ -712,10 +837,48 @@ graph += `
   25,
   50,
   75,
-  100
+  100,
 ].forEach(
   (label) => {
+    const y =
+      graphY +
+      graphH -
+      (label / 100) *
+        graphH;
 
+
+    /*
+      Numbers are now INSIDE
+      the graph area instead
+      of outside the border.
+    */
+
+    graph += `
+      <text
+        x="${graphX + 12}"
+        y="${y - 6}"
+        text-anchor="start"
+        class="axisText"
+      >
+        ${label}
+      </text>
+    `;
+  }
+);
+
+
+// ============================================================
+// Graph Guide Lines
+// ============================================================
+
+[
+  0,
+  25,
+  50,
+  75,
+  100,
+].forEach(
+  (label) => {
     const y =
       graphY +
       graphH -
@@ -724,14 +887,13 @@ graph += `
 
 
     graph += `
-      <text
-        x="${graphX + graphW - 8}"
-        y="${y + 4}"
-        text-anchor="end"
-        class="axisText"
-      >
-        ${label}
-      </text>
+      <line
+        x1="${graphX}"
+        y1="${y}"
+        x2="${graphX + graphW}"
+        y2="${y}"
+        class="gridLine"
+      />
     `;
   }
 );
@@ -754,12 +916,18 @@ const memberYears =
 // ============================================================
 // SVG
 // ============================================================
-//
-// IMPORTANT:
-// No XML declaration.
-// This avoids "Invalid image source"
-// problems with some SVG renderers.
-// ============================================================
+
+/*
+  IMPORTANT:
+
+  No XML declaration here.
+
+  This prevents:
+  "XML declaration allowed only
+   at the start of the document"
+
+  The SVG starts directly with <svg>.
+*/
 
 const svg = `
 <svg
@@ -768,7 +936,9 @@ const svg = `
   height="680"
   viewBox="0 0 980 680"
   role="img"
-  aria-label="GitHub overview for ${esc(username)}"
+  aria-label="GitHub overview for ${esc(
+    username
+  )}"
 >
 
   <defs>
@@ -807,7 +977,7 @@ const svg = `
 
       .cardTitle {
         fill: #79c0ff;
-        font: 600 18px Arial, sans-serif;
+        font: 600 17px Arial, sans-serif;
       }
 
       .legend {
@@ -817,7 +987,7 @@ const svg = `
 
       .legendPercent {
         fill: #8b949e;
-        font: 500 11px Arial, sans-serif;
+        font: 600 11px Arial, sans-serif;
       }
 
       .percent {
@@ -831,14 +1001,25 @@ const svg = `
         font: 700 20px Arial, sans-serif;
       }
 
+      .centerLabel {
+        fill: #8b949e;
+        font: 500 9px Arial, sans-serif;
+      }
+
       .axis {
         stroke: #30363d;
         stroke-width: 1;
       }
 
+      .gridLine {
+        stroke: #21262d;
+        stroke-width: 1;
+        stroke-dasharray: 4 5;
+      }
+
       .axisText {
         fill: #8b949e;
-        font: 500 11px Arial, sans-serif;
+        font: 500 10px Arial, sans-serif;
       }
 
     </style>
@@ -893,7 +1074,8 @@ const svg = `
     ${esc(
       shortName(
         user.name ||
-        username
+        username,
+        26
       )
     )}
   </text>
@@ -986,7 +1168,11 @@ const svg = `
   >
     Joined GitHub
     ${memberYears}
-    year${memberYears === 1 ? "" : "s"}
+    year${
+      memberYears === 1
+        ? ""
+        : "s"
+    }
     ago -
     ${esc(
       niceDate(
@@ -1005,8 +1191,9 @@ const svg = `
     y="72"
     class="muted"
   >
-    contributions in the last year
+    Contribution activity - last year
   </text>
+
 
   ${graph}
 
@@ -1038,7 +1225,7 @@ const svg = `
     y="405"
     width="280"
     height="230"
-    rx="10"
+    rx="12"
     class="card"
   />
 
@@ -1160,13 +1347,26 @@ const svg = `
 
 
 // ============================================================
+// Validate SVG Before Writing
+// ============================================================
+
+if (
+  !svg.trim().startsWith("<svg")
+) {
+  throw new Error(
+    "Generated SVG does not start with <svg>"
+  );
+}
+
+
+// ============================================================
 // Write SVG
 // ============================================================
 
 fs.mkdirSync(
   "generated",
   {
-    recursive: true
+    recursive: true,
   }
 );
 
