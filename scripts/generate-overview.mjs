@@ -578,59 +578,36 @@ function donutCard(
 
 
   items.forEach(
-    ([name, value], index) => {
-      const y =
-        475 +
-        index * 31;
+  ([name, value], index) => {
 
+    const y =
+      468 + index * 27;
 
-      const percentage =
-        total
-          ? Math.round(
-              (value / total) *
-                100
-            )
-          : 0;
+    legend += `
+      <rect
+        x="${x + 28}"
+        y="${y - 9}"
+        width="10"
+        height="10"
+        rx="2"
+        fill="${
+          palette[
+            index %
+            palette.length
+          ]
+        }"
+      />
 
-
-      legend += `
-        <rect
-          x="${x + 24}"
-          y="${y - 8}"
-          width="9"
-          height="9"
-          rx="2"
-          fill="${
-            palette[
-              index %
-              palette.length
-            ]
-          }"
-        />
-
-        <text
-          x="${x + 40}"
-          y="${y}"
-          class="legend"
-        >
-          ${esc(
-            shortLanguageName(
-              name,
-              12
-            )
-          )}
-        </text>
-
-        <text
-          x="${x + 126}"
-          y="${y}"
-          class="legendPercent"
-        >
-          ${percentage}%
-        </text>
-      `;
-    }
-  );
+      <text
+        x="${x + 46}"
+        y="${y}"
+        class="legend"
+      >${esc(
+        shortLanguageName(name)
+      )}</text>
+    `;
+  }
+);
 
 
   if (!items.length) {
