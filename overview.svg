@@ -1,0 +1,831 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="980"
+  height="680"
+  viewBox="0 0 980 680"
+  role="img"
+  aria-label="GitHub overview for montasir132"
+>
+
+  <defs>
+
+    <style>
+
+      .bg {
+        fill: #0d1117;
+      }
+
+      .card {
+        fill: #161b22;
+        stroke: #30363d;
+        stroke-width: 1;
+      }
+
+      .title {
+        fill: #79c0ff;
+        font: 600 24px Arial, sans-serif;
+      }
+
+      .name {
+        fill: #c084fc;
+        font: 700 25px Arial, sans-serif;
+      }
+
+      .info {
+        fill: #7ee787;
+        font: 500 14px Arial, sans-serif;
+      }
+
+      .muted {
+        fill: #8b949e;
+        font: 500 12px Arial, sans-serif;
+      }
+
+      .cardTitle {
+        fill: #79c0ff;
+        font: 600 18px Arial, sans-serif;
+      }
+
+      .legend {
+        fill: #c9d1d9;
+        font: 500 13px Arial, sans-serif;
+      }
+
+      .legendPercent {
+        font-size: 11px;
+      }
+
+      .percent {
+        fill: #8b949e;
+        font: 500 12px Arial, sans-serif;
+        text-anchor: end;
+      }
+
+      .centerText {
+        fill: #c9d1d9;
+        font: 700 20px Arial, sans-serif;
+      }
+
+      .donutLabel {
+        fill: #8b949e;
+        font: 500 9px Arial, sans-serif;
+      }
+
+      .axis {
+        stroke: #30363d;
+        stroke-width: 1;
+      }
+
+      .axisText {
+        fill: #8b949e;
+        font: 500 11px Arial, sans-serif;
+      }
+
+    </style>
+
+  </defs>
+
+
+  <!-- ===================================================== -->
+  <!-- Background -->
+  <!-- ===================================================== -->
+
+  <rect
+    width="980"
+    height="680"
+    rx="14"
+    class="bg"
+  />
+
+
+  <!-- ===================================================== -->
+  <!-- Main GitHub Overview Card -->
+  <!-- ===================================================== -->
+
+  <rect
+    x="30"
+    y="30"
+    width="920"
+    height="340"
+    rx="12"
+    class="card"
+  />
+
+
+  <!-- Title -->
+
+  <text
+    x="55"
+    y="72"
+    class="title"
+  >
+    📌 GitHub Overview
+  </text>
+
+
+  <!-- Name -->
+
+  <text
+    x="55"
+    y="116"
+    class="name"
+  >
+    Md. Montasir Alam 
+  </text>
+
+
+  <!-- Username -->
+
+  <text
+    x="55"
+    y="138"
+    class="muted"
+  >
+    @montasir132
+  </text>
+
+
+  <!-- Contributions -->
+
+  <text
+    x="55"
+    y="178"
+    class="info"
+  >
+    ◉ 497
+    Contributions on GitHub
+  </text>
+
+
+  <!-- Public Repositories -->
+
+  <text
+    x="55"
+    y="207"
+    class="info"
+  >
+    ▣ 48
+    Public Repositories
+  </text>
+
+
+  <!-- Stars -->
+
+  <text
+    x="55"
+    y="236"
+    class="info"
+  >
+    ★ 0
+    Stars Received
+  </text>
+
+
+  <!-- Followers -->
+
+  <text
+    x="55"
+    y="265"
+    class="info"
+  >
+    ● 20
+    Followers
+  </text>
+
+
+  <!-- Email -->
+
+  <text
+    x="55"
+    y="294"
+    class="info"
+  >
+    ✉ montasiralam132@gmail.com
+  </text>
+
+
+  <!-- Joined GitHub -->
+
+  <text
+    x="55"
+    y="323"
+    class="muted"
+  >
+    ◷ Joined GitHub
+    2
+    years
+    ago ·
+    Apr 2024
+  </text>
+
+
+  <!-- ===================================================== -->
+  <!-- Contribution Graph -->
+  <!-- ===================================================== -->
+
+  <text
+    x="355"
+    y="72"
+    class="muted"
+  >
+    contributions in the last year
+  </text>
+
+  
+  <line
+    x1="355"
+    y1="235"
+    x2="925"
+    y2="235"
+    class="axis"
+  />
+
+  <polygon
+    points="355,235 355.0,229.1 366.0,235.0 376.9,232.0 387.9,235.0 398.8,235.0 409.8,235.0 420.8,90.0 431.7,143.3 442.7,134.4 453.7,184.7 464.6,205.4 475.6,205.4 486.5,196.5 497.5,208.4 508.5,217.2 519.4,202.4 530.4,217.2 541.3,199.5 552.3,217.2 563.3,217.2 574.2,217.2 585.2,205.4 596.2,208.4 607.1,217.2 618.1,217.2 629.0,211.3 640.0,208.4 651.0,214.3 661.9,211.3 672.9,205.4 683.8,205.4 694.8,235.0 705.8,235.0 716.7,226.1 727.7,232.0 738.7,205.4 749.6,226.1 760.6,232.0 771.5,226.1 782.5,235.0 793.5,235.0 804.4,235.0 815.4,205.4 826.3,235.0 837.3,235.0 848.3,193.6 859.2,119.6 870.2,175.8 881.2,184.7 892.1,187.7 903.1,190.6 914.0,140.3 925.0,232.0 925,235"
+    fill="#a371f7"
+    opacity="0.45"
+  />
+
+  <polyline
+    points="355.0,229.1 366.0,235.0 376.9,232.0 387.9,235.0 398.8,235.0 409.8,235.0 420.8,90.0 431.7,143.3 442.7,134.4 453.7,184.7 464.6,205.4 475.6,205.4 486.5,196.5 497.5,208.4 508.5,217.2 519.4,202.4 530.4,217.2 541.3,199.5 552.3,217.2 563.3,217.2 574.2,217.2 585.2,205.4 596.2,208.4 607.1,217.2 618.1,217.2 629.0,211.3 640.0,208.4 651.0,214.3 661.9,211.3 672.9,205.4 683.8,205.4 694.8,235.0 705.8,235.0 716.7,226.1 727.7,232.0 738.7,205.4 749.6,226.1 760.6,232.0 771.5,226.1 782.5,235.0 793.5,235.0 804.4,235.0 815.4,205.4 826.3,235.0 837.3,235.0 848.3,193.6 859.2,119.6 870.2,175.8 881.2,184.7 892.1,187.7 903.1,190.6 914.0,140.3 925.0,232.0"
+    fill="none"
+    stroke="#c084fc"
+    stroke-width="3"
+  />
+
+    <text
+      x="917"
+      y="239"
+      text-anchor="end"
+      class="axisText"
+    >
+      0
+    </text>
+  
+    <text
+      x="917"
+      y="202.75"
+      text-anchor="end"
+      class="axisText"
+    >
+      25
+    </text>
+  
+    <text
+      x="917"
+      y="166.5"
+      text-anchor="end"
+      class="axisText"
+    >
+      50
+    </text>
+  
+    <text
+      x="917"
+      y="130.25"
+      text-anchor="end"
+      class="axisText"
+    >
+      75
+    </text>
+  
+    <text
+      x="917"
+      y="94"
+      text-anchor="end"
+      class="axisText"
+    >
+      100
+    </text>
+  
+
+
+  <!-- ===================================================== -->
+  <!-- Language Cards -->
+  <!-- ===================================================== -->
+
+  
+    <g>
+
+      <!-- Card -->
+      <rect
+        x="30"
+        y="405"
+        width="300"
+        height="230"
+        rx="10"
+        class="card"
+      />
+
+
+      <!-- Title -->
+      <text
+        x="52"
+        y="438"
+        class="cardTitle"
+      >
+        Top Languages by Repo
+      </text>
+
+
+      <!-- Language Legend -->
+      
+      <rect
+        x="58"
+        y="459"
+        width="10"
+        height="10"
+        rx="2"
+        fill="#58a6ff"
+      />
+
+      <text
+        x="76"
+        y="468"
+        class="legend"
+      >CSS</text>
+
+      <text
+        x="148"
+        y="468"
+        class="percent legendPercent"
+      >48%</text>
+    
+      <rect
+        x="58"
+        y="486"
+        width="10"
+        height="10"
+        rx="2"
+        fill="#a371f7"
+      />
+
+      <text
+        x="76"
+        y="495"
+        class="legend"
+      >HTML</text>
+
+      <text
+        x="148"
+        y="495"
+        class="percent legendPercent"
+      >40%</text>
+    
+      <rect
+        x="58"
+        y="513"
+        width="10"
+        height="10"
+        rx="2"
+        fill="#3fb950"
+      />
+
+      <text
+        x="76"
+        y="522"
+        class="legend"
+      >JavaScript</text>
+
+      <text
+        x="148"
+        y="522"
+        class="percent legendPercent"
+      >8%</text>
+    
+      <rect
+        x="58"
+        y="540"
+        width="10"
+        height="10"
+        rx="2"
+        fill="#f2cc60"
+      />
+
+      <text
+        x="76"
+        y="549"
+        class="legend"
+      >Python</text>
+
+      <text
+        x="148"
+        y="549"
+        class="percent legendPercent"
+      >4%</text>
+    
+
+
+      <!-- Donut -->
+      
+        <circle
+          cx="245"
+          cy="525"
+          r="62"
+          fill="none"
+          stroke="#58a6ff"
+          stroke-width="18"
+          stroke-linecap="butt"
+          stroke-dasharray="185.4162116006494 204.14127744448493"
+          stroke-dashoffset="0"
+          transform="rotate(-90 245 525)"
+        />
+      
+        <circle
+          cx="245"
+          cy="525"
+          r="62"
+          fill="none"
+          stroke="#a371f7"
+          stroke-width="18"
+          stroke-linecap="butt"
+          stroke-dasharray="157.54098951657411 232.01649952856022"
+          stroke-dashoffset="-185.4162116006494"
+          transform="rotate(-90 245 525)"
+        />
+      
+        <circle
+          cx="245"
+          cy="525"
+          r="62"
+          fill="none"
+          stroke="#3fb950"
+          stroke-width="18"
+          stroke-linecap="butt"
+          stroke-dasharray="32.240065413022855 357.31742363211146"
+          stroke-dashoffset="-342.9572011172235"
+          transform="rotate(-90 245 525)"
+        />
+      
+        <circle
+          cx="245"
+          cy="525"
+          r="62"
+          fill="none"
+          stroke="#f2cc60"
+          stroke-width="18"
+          stroke-linecap="butt"
+          stroke-dasharray="14.360222514887958 375.1972665302464"
+          stroke-dashoffset="-375.1972665302464"
+          transform="rotate(-90 245 525)"
+        />
+      
+
+
+      <!-- Donut Center -->
+      <circle
+        cx="245"
+        cy="525"
+        r="42"
+        fill="#161b22"
+      />
+
+
+      <!-- Number -->
+      <text
+        x="245"
+        y="527"
+        text-anchor="middle"
+        class="centerText"
+      >
+        4
+      </text>
+
+
+      <!-- Small label -->
+      <text
+        x="245"
+        y="545"
+        text-anchor="middle"
+        class="donutLabel"
+      >
+        Languages
+      </text>
+
+    </g>
+  
+
+  
+    <g>
+
+      <!-- Card -->
+      <rect
+        x="350"
+        y="405"
+        width="300"
+        height="230"
+        rx="10"
+        class="card"
+      />
+
+
+      <!-- Title -->
+      <text
+        x="372"
+        y="438"
+        class="cardTitle"
+      >
+        Top Languages by Commit
+      </text>
+
+
+      <!-- Language Legend -->
+      
+      <rect
+        x="378"
+        y="459"
+        width="10"
+        height="10"
+        rx="2"
+        fill="#58a6ff"
+      />
+
+      <text
+        x="396"
+        y="468"
+        class="legend"
+      >HTML</text>
+
+      <text
+        x="468"
+        y="468"
+        class="percent legendPercent"
+      >58%</text>
+    
+      <rect
+        x="378"
+        y="486"
+        width="10"
+        height="10"
+        rx="2"
+        fill="#a371f7"
+      />
+
+      <text
+        x="396"
+        y="495"
+        class="legend"
+      >CSS</text>
+
+      <text
+        x="468"
+        y="495"
+        class="percent legendPercent"
+      >28%</text>
+    
+      <rect
+        x="378"
+        y="513"
+        width="10"
+        height="10"
+        rx="2"
+        fill="#3fb950"
+      />
+
+      <text
+        x="396"
+        y="522"
+        class="legend"
+      >Python</text>
+
+      <text
+        x="468"
+        y="522"
+        class="percent legendPercent"
+      >8%</text>
+    
+      <rect
+        x="378"
+        y="540"
+        width="10"
+        height="10"
+        rx="2"
+        fill="#f2cc60"
+      />
+
+      <text
+        x="396"
+        y="549"
+        class="legend"
+      >JavaScript</text>
+
+      <text
+        x="468"
+        y="549"
+        class="percent legendPercent"
+      >6%</text>
+    
+
+
+      <!-- Donut -->
+      
+        <circle
+          cx="565"
+          cy="525"
+          r="62"
+          fill="none"
+          stroke="#58a6ff"
+          stroke-width="18"
+          stroke-linecap="butt"
+          stroke-dasharray="227.2418686096617 162.31562043547262"
+          stroke-dashoffset="0"
+          transform="rotate(-90 565 525)"
+        />
+      
+        <circle
+          cx="565"
+          cy="525"
+          r="62"
+          fill="none"
+          stroke="#a371f7"
+          stroke-width="18"
+          stroke-linecap="butt"
+          stroke-dasharray="108.21041362364844 281.3470754214859"
+          stroke-dashoffset="-227.2418686096617"
+          transform="rotate(-90 565 525)"
+        />
+      
+        <circle
+          cx="565"
+          cy="525"
+          r="62"
+          fill="none"
+          stroke="#3fb950"
+          stroke-width="18"
+          stroke-linecap="butt"
+          stroke-dasharray="32.46312408709453 357.0943649580398"
+          stroke-dashoffset="-335.45228223331014"
+          transform="rotate(-90 565 525)"
+        />
+      
+        <circle
+          cx="565"
+          cy="525"
+          r="62"
+          fill="none"
+          stroke="#f2cc60"
+          stroke-width="18"
+          stroke-linecap="butt"
+          stroke-dasharray="21.642082724729683 367.91540632040466"
+          stroke-dashoffset="-367.91540632040466"
+          transform="rotate(-90 565 525)"
+        />
+      
+
+
+      <!-- Donut Center -->
+      <circle
+        cx="565"
+        cy="525"
+        r="42"
+        fill="#161b22"
+      />
+
+
+      <!-- Number -->
+      <text
+        x="565"
+        y="527"
+        text-anchor="middle"
+        class="centerText"
+      >
+        4
+      </text>
+
+
+      <!-- Small label -->
+      <text
+        x="565"
+        y="545"
+        text-anchor="middle"
+        class="donutLabel"
+      >
+        Languages
+      </text>
+
+    </g>
+  
+
+
+  <!-- ===================================================== -->
+  <!-- GitHub Snapshot -->
+  <!-- ===================================================== -->
+
+  <rect
+    x="670"
+    y="405"
+    width="280"
+    height="230"
+    rx="10"
+    class="card"
+  />
+
+
+  <text
+    x="692"
+    y="438"
+    class="cardTitle"
+  >
+    GitHub Snapshot
+  </text>
+
+
+  <!-- Repositories -->
+
+  <text
+    x="692"
+    y="478"
+    class="legend"
+  >
+    Repositories
+  </text>
+
+  <text
+    x="925"
+    y="478"
+    class="percent"
+  >
+    48
+  </text>
+
+
+  <!-- Stars -->
+
+  <text
+    x="692"
+    y="510"
+    class="legend"
+  >
+    Stars
+  </text>
+
+  <text
+    x="925"
+    y="510"
+    class="percent"
+  >
+    0
+  </text>
+
+
+  <!-- Followers -->
+
+  <text
+    x="692"
+    y="542"
+    class="legend"
+  >
+    Followers
+  </text>
+
+  <text
+    x="925"
+    y="542"
+    class="percent"
+  >
+    20
+  </text>
+
+
+  <!-- Contributions -->
+
+  <text
+    x="692"
+    y="574"
+    class="legend"
+  >
+    Contributions
+  </text>
+
+  <text
+    x="925"
+    y="574"
+    class="percent"
+  >
+    497
+  </text>
+
+
+  <!-- Focus -->
+
+  <text
+    x="692"
+    y="606"
+    class="legend"
+  >
+    Focus
+  </text>
+
+  <text
+    x="925"
+    y="606"
+    class="percent"
+  >
+    Full-Stack Web Dev
+  </text>
+
+
+</svg>
