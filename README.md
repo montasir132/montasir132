@@ -143,16 +143,10 @@ Software Engineering     ███████████░░░░░░░�
 
 ---
 ## 🟢 Most Used Languages
-
-<div align="center">
-
-<img
-  src="https://raw.githubusercontent.com/montasir132/montasir132/output/languages.svg"
-  alt="Montasir's Most Used Languages"
-  width="850"
-/>
-
+<div data-importer="stats" align="center">
+  <img src="https://raw.githubusercontent.com/montasir132/montasir132/languages-output/languages.svg?locale=en&hide_title=true&layout=compact&card_width=320&langs_count=15&theme=radical&hide_border=false&order=2" height="150" alt="languages graph"  />
 </div>
+
 ---
 ## 📈 Contribution Activity Graph
 
