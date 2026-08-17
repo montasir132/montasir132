@@ -107,20 +107,6 @@ Software Engineering     ███████████░░░░░░░�
 
 ---
 
-## 🐍 My Contribution Snake
-
-<div align="center">
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/montasir132/montasir132/output/ocean.gif">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/montasir132/montasir132/output/github-snake.svg">
-  <img alt="GitHub Contribution Snake" src="https://raw.githubusercontent.com/montasir132/montasir132/output/github-snake.svg">
-</picture>
-
-</div>
-
- 
----
 ## 🟡 My Contribution pacman
 
 <div align="center">
@@ -132,7 +118,6 @@ Software Engineering     ███████████░░░░░░░�
 </div>
 
 ---
-## 🔥 Contribution Statistics
 
 <div align="center">
 
@@ -153,7 +138,7 @@ Software Engineering     ███████████░░░░░░░�
 
 </td>
 
-<td width="50%" align="center">
+<td width="40%" align="center">
 
 ### 🟢 Languages Used
 
@@ -172,6 +157,20 @@ Software Engineering     ███████████░░░░░░░�
 
 ---
 
+## 🐍 My Contribution Snake
+
+<div align="center">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/montasir132/montasir132/output/github-snake-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/montasir132/montasir132/output/github-snake.svg">
+  <img alt="GitHub Contribution Snake" src="https://raw.githubusercontent.com/montasir132/montasir132/output/github-snake.svg">
+</picture>
+
+</div>
+
+ 
+---
 
 ---
 ## 📈 Contribution Activity Graph
