@@ -1,3 +1,5 @@
+  <!-- <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=100&section=header" alt="header"/> -->
+
 [![MasterHead](https://user-images.githubusercontent.com/90236635/232446433-d5540fa2-fe28-4bb8-b929-cdb51fe61336.gif)](https://portfolio-k6cq65351-montasiralam-projects.vercel.app/)
 <div align="center">
 
@@ -119,15 +121,27 @@ Software Engineering     ███████████░░░░░░░�
 
  
 ---
-
-## 🔥 Contribution Streak
+## 🟡 My Contribution pacman
 
 <div align="center">
+    <picture data-importer="pacman">
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/montasir132/montasir132/pacman-output/pacman-contribution-graph-dark.svg?game=pacman">
+      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/montasir132/montasir132/pacman-output/pacman-contribution-graph.svg?game=pacman">
+      <img alt="pacman contribution graph" src="https://raw.githubusercontent.com/montasir132/montasir132/pacman-output/  pacman-contribution-graph.svg?game=pacman">
+    </picture>
+</div>
 
-<a href="https://github.com/montasir132">
-  <img src="https://streak-stats.demolab.com?user=montasir132&theme=tokyonight&hide_border=true" alt="Montasir's GitHub Streak">
-</a>
+---
 
+## 🟢 Languages Used & 🔥 Contribution Streak
+
+<div data-importer="stats" align="left">
+  <img src="https://raw.githubusercontent.com/montasir132/montasir132/languages-output/languages.svg?locale=en&hide_title=false&layout=compact&card_width=320&langs_count=12&theme=radical&hide_border=false&order=2" height="160" alt="languages graph"  />
+</div>
+<div align="right">
+  <a href="https://github.com/montasir132">
+    <img src="https://streak-stats.demolab.com?user=montasir132&theme=tokyonight&hide_border=true" alt="Montasir's GitHub Streak">
+  </a>
 </div>
 
 ---
