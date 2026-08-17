@@ -133,19 +133,20 @@ Software Engineering     ███████████░░░░░░░�
 
 ---
 
-## 🟢 Languages Used & 🔥 Contribution Streak
+## 🔥 Contribution Streak
 
-<div data-importer="stats" align="left">
-  <img src="https://raw.githubusercontent.com/montasir132/montasir132/languages-output/languages.svg?locale=en&hide_title=false&layout=compact&card_width=320&langs_count=12&theme=radical&hide_border=false&order=2" height="160" alt="languages graph"  />
-</div>
-<div align="right">
+<div align="center">
   <a href="https://github.com/montasir132">
     <img src="https://streak-stats.demolab.com?user=montasir132&theme=tokyonight&hide_border=true" alt="Montasir's GitHub Streak">
   </a>
 </div>
 
 ---
-
+## 🟢 Languages Used 
+<div data-importer="stats" align="center">
+  <img src="https://raw.githubusercontent.com/montasir132/montasir132/languages-output/languages.svg?locale=en&hide_title=false&layout=compact&card_width=320&langs_count=12&theme=radical&hide_border=false&order=2" height="160" alt="languages graph"  />
+</div>
+---
 ## 📈 Contribution Activity Graph
 
 <div align="center">
