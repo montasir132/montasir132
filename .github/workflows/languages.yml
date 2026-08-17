@@ -1,36 +1,83 @@
-name: Generate languages card
+name: Update Language Statistics
 
 on:
-  schedule: # execute every 12 hours
-    - cron: "* */12 * * *"
+  schedule:
+    - cron: "30 0 * * *"
 
   workflow_dispatch:
 
   push:
     branches:
-    - main
+      - main
+
+permissions:
+  contents: write
 
 jobs:
-  generate:
-    permissions:
-      contents: write
+  languages:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
 
     steps:
-      - name: generate languages.svg
-        uses: readme-tools/github-readme-stats-action@v1
+
+      # -----------------------------------------
+      # Checkout
+      # -----------------------------------------
+
+      - name: Checkout repository
+        uses: actions/checkout@v5
         with:
-          card: top-langs
-          options: username=${{ github.repository_owner }}&locale=en&hide_title=false&layout=compact&card_width=320&langs_count=12&theme=radical&hide_border=false
-          path: dist/languages.svg
-          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
 
 
-      - name: push languages.svg to the output branch
-        uses: crazy-max/ghaction-github-pages@v3.1.0
+      # -----------------------------------------
+      # Node.js
+      # -----------------------------------------
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
         with:
-          target_branch: languages-output
-          build_dir: dist
+          node-version: 24
+
+
+      # -----------------------------------------
+      # Generate languages.svg
+      # -----------------------------------------
+
+      - name: Generate Language Statistics
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+          GITHUB_USERNAME: montasir132
+        run: |
+          node scripts/generate-languages.mjs
+
+
+      # -----------------------------------------
+      # Publish to output branch
+      # -----------------------------------------
+
+      - name: Update Output Branch
+        run: |
+
+          git fetch origin output:output
+
+          git switch output
+
+          cp generated/languages.svg ./languages.svg
+
+          git config user.name "github-actions[bot]"
+
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add languages.svg
+
+          if git diff --cached --quiet; then
+
+            echo "No changes to languages.svg"
+
+          else
+
+            git commit -m "Update language statistics"
+
+            git push origin output
+
+          fi
