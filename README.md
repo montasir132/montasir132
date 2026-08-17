@@ -143,8 +143,9 @@ Software Engineering     ███████████░░░░░░░�
 
 ---
 ## 🟢 Languages Used 
-<div data-importer="stats" align="center">
-  <img src="https://raw.githubusercontent.com/montasir132/montasir132/languages-output/languages.svg?locale=en&hide_title=false&layout=compact&card_width=320&langs_count=12&theme=radical&hide_border=false&order=2" height="160" alt="languages graph"  />
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/montasir132/montasir132/languages-output/languages.svg?locale=en&hide_title=false&layout=compact&card_width=320&langs_count=12&theme=radical&hide_border=false&order=2" height="160" alt="languages graph" />
 </div>
 ---
 ## 📈 Contribution Activity Graph
