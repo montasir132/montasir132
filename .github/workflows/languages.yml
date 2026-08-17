@@ -19,19 +19,12 @@ jobs:
 
     steps:
 
-      # -----------------------------------------
-      # Checkout
-      # -----------------------------------------
-
       - name: Checkout repository
         uses: actions/checkout@v5
         with:
           fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
 
-
-      # -----------------------------------------
-      # Node.js
-      # -----------------------------------------
 
       - name: Setup Node.js
         uses: actions/setup-node@v5
@@ -39,21 +32,12 @@ jobs:
           node-version: 24
 
 
-      # -----------------------------------------
-      # Generate languages.svg
-      # -----------------------------------------
-
       - name: Generate Language Statistics
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
           GITHUB_USERNAME: montasir132
         run: |
           node scripts/generate-languages.mjs
 
-
-      # -----------------------------------------
-      # Publish to output branch
-      # -----------------------------------------
 
       - name: Update Output Branch
         run: |

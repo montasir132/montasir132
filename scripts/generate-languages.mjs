@@ -1,20 +1,9 @@
 import fs from "node:fs";
 
-const token =
-  process.env.GITHUB_TOKEN ||
-  process.env.GH_PAT;
-
 const username =
   process.env.GITHUB_USERNAME || "montasir132";
 
-if (!token) {
-  throw new Error(
-    "GITHUB_TOKEN or GH_PAT is required"
-  );
-}
-
 const headers = {
-  Authorization: `Bearer ${token}`,
   Accept: "application/vnd.github+json",
   "X-GitHub-Api-Version": "2022-11-28",
   "User-Agent": `${username}-language-stats`
@@ -57,24 +46,17 @@ function esc(value = "") {
 }
 
 
-function formatNumber(number) {
-  return new Intl.NumberFormat(
-    "en-US"
-  ).format(number);
-}
-
-
 // ============================================================
-// Get ALL repositories
-// Public + Private
+// Get Public Repositories
 // ============================================================
 
 let repos = [];
 let page = 1;
 
 while (true) {
+
   const batch = await githubRest(
-    `/user/repos?per_page=100&page=${page}&visibility=all&affiliation=owner&sort=updated`
+    `/users/${username}/repos?per_page=100&page=${page}&type=owner&sort=updated`
   );
 
   repos.push(...batch);
@@ -88,17 +70,18 @@ while (true) {
 
 
 console.log(
-  `Found ${repos.length} repositories`
+  `Found ${repos.length} public repositories`
 );
 
 
 // ============================================================
-// Language statistics
+// Language Statistics
 // ============================================================
 
 const languageBytes = {};
 
 let processedRepos = 0;
+
 
 for (const repo of repos) {
 
@@ -111,7 +94,7 @@ for (const repo of repos) {
 
     const languages =
       await githubRest(
-        `/repos/${repo.owner.login}/${encodeURIComponent(repo.name)}/languages`
+        `/repos/${username}/${encodeURIComponent(repo.name)}/languages`
       );
 
     for (
@@ -136,7 +119,7 @@ for (const repo of repos) {
 
 
 // ============================================================
-// Sort languages
+// Sort Languages
 // ============================================================
 
 const languages =
@@ -172,21 +155,21 @@ const colors = [
 
 
 // ============================================================
-// SVG
+// Donut Settings
 // ============================================================
 
 const width = 900;
 const height = 420;
 
 const centerX = 450;
-const centerY = 205;
+const centerY = 190;
 
-const outerRadius = 125;
-const innerRadius = 82;
+const outerRadius = 120;
+const innerRadius = 78;
 
 
 // ============================================================
-// Donut
+// Polar Coordinates
 // ============================================================
 
 function polarToCartesian(
@@ -195,6 +178,7 @@ function polarToCartesian(
   radius,
   angle
 ) {
+
   const radians =
     (angle - 90) *
     Math.PI /
@@ -213,6 +197,10 @@ function polarToCartesian(
   };
 }
 
+
+// ============================================================
+// Donut Path
+// ============================================================
 
 function donutPath(
   startAngle,
@@ -252,8 +240,7 @@ function donutPath(
     );
 
   const largeArc =
-    endAngle - startAngle >
-    180
+    endAngle - startAngle > 180
       ? 1
       : 0;
 
@@ -283,9 +270,14 @@ function donutPath(
 }
 
 
+// ============================================================
+// Donut
+// ============================================================
+
 let currentAngle = 0;
 
 let donut = "";
+
 
 languages.forEach(
   ([language, bytes], index) => {
@@ -323,6 +315,7 @@ languages.forEach(
 
 let legend = "";
 
+
 languages.forEach(
   ([language, bytes], index) => {
 
@@ -345,7 +338,7 @@ languages.forEach(
         : 500;
 
     const y =
-      300 + row * 27;
+      285 + row * 27;
 
     legend += `
       <circle
@@ -380,7 +373,7 @@ languages.forEach(
 
 
 // ============================================================
-// Final SVG
+// SVG
 // ============================================================
 
 const svg = `
@@ -400,16 +393,12 @@ const svg = `
     fill="#0d1117"
   />
 
+
   <style>
 
     .title {
       fill: #79c0ff;
       font: 700 24px Arial, sans-serif;
-    }
-
-    .subtitle {
-      fill: #8b949e;
-      font: 500 13px Arial, sans-serif;
     }
 
     .language {
@@ -435,6 +424,12 @@ const svg = `
       text-anchor: middle;
     }
 
+    .footer {
+      fill: #8b949e;
+      font: 500 11px Arial, sans-serif;
+      text-anchor: end;
+    }
+
   </style>
 
 
@@ -449,21 +444,12 @@ const svg = `
   </text>
 
 
-  <text
-    x="55"
-    y="78"
-    class="subtitle"
-  >
-    Public + Private repositories
-  </text>
-
-
   <!-- Donut -->
 
   ${donut}
 
 
-  <!-- Center -->
+  <!-- Donut Center -->
 
   <text
     x="${centerX}"
@@ -482,7 +468,7 @@ const svg = `
   </text>
 
 
-  <!-- Legend -->
+  <!-- Language Legend -->
 
   ${legend}
 
@@ -492,11 +478,9 @@ const svg = `
   <text
     x="845"
     y="390"
-    text-anchor="end"
-    class="subtitle"
+    class="footer"
   >
-    ${formatNumber(processedRepos)}
-    repositories analyzed
+    ${processedRepos} repositories analyzed
   </text>
 
 </svg>
@@ -504,7 +488,7 @@ const svg = `
 
 
 // ============================================================
-// Write file
+// Write SVG
 // ============================================================
 
 fs.mkdirSync(
@@ -514,11 +498,13 @@ fs.mkdirSync(
   }
 );
 
+
 fs.writeFileSync(
   "generated/languages.svg",
   svg.trim(),
   "utf8"
 );
+
 
 console.log(
   "Generated generated/languages.svg"
