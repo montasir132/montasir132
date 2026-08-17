@@ -637,7 +637,7 @@
             stroke="#58a6ff"
             stroke-width="20"
             stroke-linecap="butt"
-            stroke-dasharray="171.14984764605902 218.40764139907532"
+            stroke-dasharray="170.5905344184575 218.96695462667682"
             stroke-dashoffset="0"
             transform="rotate(-90 564 525)"
           />
@@ -650,8 +650,8 @@
             stroke="#a371f7"
             stroke-width="20"
             stroke-linecap="butt"
-            stroke-dasharray="83.02044848502862 306.5370405601057"
-            stroke-dashoffset="-171.14984764605902"
+            stroke-dasharray="84.02220351953878 305.53528552559555"
+            stroke-dashoffset="-170.5905344184575"
             transform="rotate(-90 564 525)"
           />
         
@@ -663,8 +663,8 @@
             stroke="#3fb950"
             stroke-width="20"
             stroke-linecap="butt"
-            stroke-dasharray="71.52530946402466 318.0321795811097"
-            stroke-dashoffset="-254.17029613108764"
+            stroke-dasharray="71.29156662263895 318.26592242249535"
+            stroke-dashoffset="-254.6127379379963"
             transform="rotate(-90 564 525)"
           />
         
@@ -676,8 +676,8 @@
             stroke="#f2cc60"
             stroke-width="20"
             stroke-linecap="butt"
-            stroke-dasharray="63.86188345002202 325.6956055951123"
-            stroke-dashoffset="-325.6956055951123"
+            stroke-dasharray="63.65318448449907 325.90430456063524"
+            stroke-dashoffset="-325.90430456063524"
             transform="rotate(-90 564 525)"
           />
         
