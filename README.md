@@ -132,20 +132,46 @@ Software Engineering     ███████████░░░░░░░�
 </div>
 
 ---
-
-## 🔥 Contribution Streak
+## 🔥 Contribution Statistics
 
 <div align="center">
-  <a href="https://github.com/montasir132">
-    <img src="https://streak-stats.demolab.com?user=montasir132&theme=tokyonight&hide_border=true" alt="Montasir's GitHub Streak">
-  </a>
+
+<table>
+<tr>
+
+<td width="60%" align="center">
+
+### 🔥 Contribution Streak
+
+<a href="https://github.com/montasir132">
+  <img
+    src="https://streak-stats.demolab.com?user=montasir132&theme=radical&hide_border=true&background=0D1117&ring=A371F7&fire=F85149&currStreakNum=FFFFFF&sideNums=FFFFFF&currStreakLabel=A371F7&sideLabels=C9D1D9&dates=8B949E"
+    alt="Montasir's GitHub Streak"
+    width="400"
+  />
+</a>
+
+</td>
+
+<td width="50%" align="center">
+
+### 🟢 Languages Used
+
+<img
+  src="https://raw.githubusercontent.com/montasir132/montasir132/languages-output/languages.svg?locale=en&hide_title=false&layout=compact&card_width=320&langs_count=12&theme=radical&hide_border=false&order=2"
+  alt="Montasir's Languages"
+  width="400"
+/>
+
+</td>
+
+</tr>
+</table>
+
 </div>
 
 ---
-## 🟢 Most Used Languages
-<div data-importer="stats" align="center">
-  <img src="https://raw.githubusercontent.com/montasir132/montasir132/languages-output/languages.svg?locale=en&hide_title=true&layout=compact&card_width=320&langs_count=15&theme=radical&hide_border=false&order=2" height="150" alt="languages graph"  />
-</div>
+
 
 ---
 ## 📈 Contribution Activity Graph
